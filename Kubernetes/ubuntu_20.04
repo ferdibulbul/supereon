@@ -1,0 +1,15 @@
+Vagrant.configure("2") do |config|	
+    config.vm.define "ubuntu_20" do |ubuntu_20|
+        ubuntu_20.vm.box = "ubuntu/focal64"    #UBUNTU 20.04 LTS
+        ubuntu_20.vm.hostname = "ubuntu-20.04"
+	        ubuntu_20.vm.network "forwarded_port", guest: 22, host: 2350, host_ip: "127.0.0.1", id: "ssh"
+        ubuntu_20.vm.network "private_network", ip: "192.168.123.50"
+        ubuntu_20.vm.define "ubuntu-20.04"
+        ubuntu_20.vm.provider "virtualbox" do |vb|
+		      vb.name = "ubuntu_20.04"
+		      vb.memory = "2048"
+		      vb.cpus = "2"
+	    end
+    end
+
+end
