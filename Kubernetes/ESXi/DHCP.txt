@@ -1,0 +1,46 @@
+ip dhcp pool VM-MGMT
+ network 192.168.100.0 255.255.255.0
+ default-router 192.168.100.1
+ dns-server 192.168.100.200
+ domain-name supereon.local
+!
+ip dhcp pool k8-1-master
+ host 192.168.100.160 255.255.255.0
+ hardware-address 0050.563f.0101
+ client-name k8-1-master
+ default-router 192.168.100.1
+ dns-server 8.8.8.8 192.168.100.200
+ domain-name supereon.local
+!
+ip dhcp pool k8-1-worker1
+ host 192.168.100.161 255.255.255.0
+ hardware-address 00:50:56:3f:02:01
+ client-name k8-1-worker1
+ default-router 192.168.100.1
+ dns-server 8.8.8.8 192.168.100.200
+ domain-name supereon.local
+!
+ip dhcp pool k8-1-worker2
+ host 192.168.100.162 255.255.255.0
+ hardware-address 00:50:56:3f:02:02
+ client-name k8-1-worker2
+ default-router 192.168.100.1
+ dns-server 8.8.8.8 192.168.100.200
+ domain-name supereon.local
+!
+ip dhcp pool k8-1-worker3
+ host 192.168.100.163 255.255.255.0
+ hardware-address 00:50:56:3f:02:03
+ client-name k8-1-worker3
+ default-router 192.168.100.1
+ dns-server 8.8.8.8 192.168.100.200
+ domain-name supereon.local
+!
+ip dhcp pool k8-1-worker4
+ host 192.168.100.164 255.255.255.0
+ hardware-address 00:50:56:3f:02:04
+ client-name k8-1-worker4
+ default-router 192.168.100.1
+ dns-server 8.8.8.8 192.168.100.200
+ domain-name supereon.local
+!
